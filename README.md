@@ -19,7 +19,7 @@ And run the docker-compose:
 docker-compose up -d
 ```
 
-After a while you should be able to access kibana on port `80`
+After a while you should be able to access kibana on port `80` (to change port, just update the docker-compose.yml)
 
 ## Kontena fluent forwarder
 
