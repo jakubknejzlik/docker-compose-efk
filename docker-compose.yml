@@ -9,17 +9,33 @@ services:
     ports:
       - "24224:24224"
       - "24224:24224/udp"
-
+    logging:
+      # limit logs retained on host to 25MB
+      driver: "json-file"
+      options:
+        max-size: "500k"
+        max-file: "50"
   elasticsearch:
     image: elasticsearch
     expose:
       - 9200
     ports:
       - "9200:9200"
-
+    logging:
+      # limit logs retained on host to 25MB
+      driver: "json-file"
+      options:
+        max-size: "500k"
+        max-file: "50"
   kibana:
     image: kibana
     links:
       - "elasticsearch"
     ports:
       - "80:5601"
+    logging:
+      # limit logs retained on host to 25MB
+      driver: "json-file"
+      options:
+        max-size: "500k"
+        max-file: "50"
